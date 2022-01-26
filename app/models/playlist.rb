@@ -56,4 +56,8 @@ class Playlist < ActiveRecord::Base
 
         playlist.save
     end 
+
+    def fix_descriptions()
+        
+    end 
 end     
