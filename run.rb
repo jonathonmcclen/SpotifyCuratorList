@@ -8,15 +8,10 @@ end
 def refresh_data
 
     Playlist.delete_all
+    file_text = get_file_text
 
-    data_file = File.open("testObj.txt")
-    file_text = data_file.read
-    data_file.close
-
-    #file_text.gsub(/\r/," ")
+    #split blocks
     playlists = file_text.split("\n\n")
-
-   # a.find_index("a")
 
    playlists.each do |playlist| 
         playlist_info = playlist.split("\n")
@@ -36,14 +31,13 @@ def refresh_data
 end 
 
 def fix_all_descriptions()
-    data_file = File.open("testObj.txt")
-    file_text = data_file.read
-    data_file.close
-
+    file_text = get_file_text
     #separate objects by double space
     playlists_blocks = file_text.split("\n\n")
 
+    #each block
     playlists_blocks.each do |playlist| 
+
         playlist_info = playlist.split("\n")
         new_playlist_info = []
         description_start_i = 0
@@ -53,18 +47,6 @@ def fix_all_descriptions()
                 description_start_i = playlist_info.index(line) #num
             end
         end
-
-        description = playlist_info[description_start_i]
-
-        playlist_info[description_start_i..last].each do |line|
-            if !line.include?(": ")
-                description = description + " " + line
-            else
-                break
-            end 
-        end
-        
-        description
 
     end 
 end 
