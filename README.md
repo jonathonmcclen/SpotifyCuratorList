@@ -1,24 +1,13 @@
-# README
+# SpotifyCuratorListAPI
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a list of User Curated Spotify playlists that are open to submissions from musicialsn and recording artist.
 
-Things you may want to cover:
+"/playlist"
 
-* Ruby version
+"/playlist/:playlist_id"
 
-* System dependencies
+"/genre"
 
-* Configuration
+"/genre/:genre_name"
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+"/genre/:genre_name/playlists"
