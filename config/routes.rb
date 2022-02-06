@@ -1,3 +1,10 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  get '/playlist', to: 'playlist#index'
+  get '/playlist/:playlist_id', to: 'playlist#show'
+  
+  get '/genre', to: 'genre#index'
+  get '/genre/:genre_id', to: 'genre#show'
+
+  get '/genre/:genre_id/playlists', to: 'playlist#genre_search'
+  get '/playlists/genre/nil', to: 'playlist#nil_genre'
 end
