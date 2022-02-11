@@ -1,24 +1,23 @@
-# README
+# SpotifyCuratorListAPI
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a list of over 3,000+ user curated Spotify playlists, that accept submissions from musicians and recording artist.
 
-Things you may want to cover:
+## End Points
 
-* Ruby version
+### Basic end point for a complete list of playlists
+>/playlist
 
-* System dependencies
+### Add an :playlist_id to view a singular playlist
+>/playlist/:playlist_id
 
-* Configuration
 
-* Database creation
+### Full List of Genres
+>/genre
 
-* Database initialization
 
-* How to run the test suite
+### View singular Genre json object. object inclueds :name and :id
+>/genre/:genre_name
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+*The Magic
+### View all playlists that have the specified genre
+>/genre/:genre_name/playlists
