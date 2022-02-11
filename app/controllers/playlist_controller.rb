@@ -12,7 +12,7 @@ class PlaylistController < ApplicationController
     end 
 
     def genre_search
-        genre = Genre.find(params[:genre_id])
+        genre = Genre.find(params[:genre])
         
         render json: genre.playlists.to_json(:include => { :genres => { :only => :name } })
     end 
@@ -21,5 +21,10 @@ class PlaylistController < ApplicationController
         playlists = Playlist.where(genres_string: nil)
         render json: playlists
     end
+
+    def new
+        byebug
+        Playlist.new
+    end 
 
 end 
