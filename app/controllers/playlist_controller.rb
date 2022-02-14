@@ -23,8 +23,24 @@ class PlaylistController < ApplicationController
     end
 
     def new
-        byebug
-        Playlist.new
+        new_playlist = Playlist.new
+        new_playlist.name = params[:name] != "" ? params[:name] : nil 
+
+        new_playlist.curator = params[:curator] != "" ? params[:curator] : nil 
+        new_playlist.email = params[:email] != "" ? params[:email] : nil
+        new_playlist.location = params[:location] != "" ? params[:location] : nil
+        new_playlist.genres_string = params[:genres_string] != "" ? params[:genres_string] : nil
+        new_playlist.description = params[:description] != "" ? params[:description] : nil
+        new_playlist.spotify_playlist_page = params[:playlist_page] != "" ? params[:playlist_page] : nil
+        new_playlist.twitter = params[:twitter] != "" ? params[:twitter] : nil
+        new_playlist.youtube = params[:youtube] != "" ? params[:youtube] : nil
+        new_playlist.instagram = params[:instagram] != "" ? params[:instagram] : nil
+        new_playlist.reddit = params[:reddit] != "" ? params[:reddit] : nil
+        new_playlist.facebook = params[:facebook] != "" ? params[:facebook] : nil
+        new_playlist.website = params[:website] != "" ? params[:website] : nil
+        new_playlist.patreon = params[:patreon] != "" ? params[:patreon] : nil
+        new_playlist.save
+        binding.pry
     end 
 
 end 
