@@ -24,8 +24,8 @@ class PlaylistController < ApplicationController
 
     def new
         new_playlist = Playlist.new
+        
         new_playlist.name = params[:name] != "" ? params[:name] : nil 
-
         new_playlist.curator = params[:curator] != "" ? params[:curator] : nil 
         new_playlist.email = params[:email] != "" ? params[:email] : nil
         new_playlist.location = params[:location] != "" ? params[:location] : nil
