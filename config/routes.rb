@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   get '/genre', to: 'genre#index'
   get '/genre/:genre', to: 'genre#show'
 
-  get '/genre/:genre/playlists', to: 'playlist#genre_search'
+  get '/genre/:genre_name/playlists', to: 'playlist#genre_search'
 
   post '/playlist/new', to: 'playlist#new'
 end

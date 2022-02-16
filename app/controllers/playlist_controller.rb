@@ -12,7 +12,7 @@ class PlaylistController < ApplicationController
     end 
 
     def genre_search
-        genre = Genre.find(params[:genre])
+        genre = Genre.find_by(name: params[:genre_name].upcase)
         
         render json: genre.playlists.to_json(:include => { :genres => { :only => :name } })
     end 
