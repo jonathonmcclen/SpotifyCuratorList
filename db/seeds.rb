@@ -1,10 +1,10 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+#General Arts Touring
+#PO Box 825, Highland, NY 12528
+#PH: 917-645-5383
+#Tom Gallant tomg@genartstouring.com https://www.generalartstouring.com
+#I bring my knowledge of touring and my sensitivity to each artist'92s needs to this ever-changing world of the performing arts.
+#Genres: CLASSICAL, SOLOISTS, ENSEMBLES
+#Books Shows in: United States, Canada
 
 def get_file_text
     data_file = File.open("list.txt")
