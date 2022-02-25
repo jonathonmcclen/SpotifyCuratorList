@@ -40,7 +40,6 @@ class PlaylistController < ApplicationController
         new_playlist.website = params[:website] != "" ? params[:website] : nil
         new_playlist.patreon = params[:patreon] != "" ? params[:patreon] : nil
         new_playlist.save
-        binding.pry
     end 
 
 end 
