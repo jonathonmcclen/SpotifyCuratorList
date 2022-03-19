@@ -42,4 +42,28 @@ class PlaylistController < ApplicationController
         new_playlist.save
     end 
 
+    def new_for_final
+
+        new_playlist = Playlist.new
+        #binding.pry
+        
+        new_playlist.name = params[:playlist][:playlistName] != "" ? params[:playlist][:playlistName] : nil 
+        new_playlist.curator = params[:playlist][:curator] != "" ? params[:playlist][:curator] : nil 
+        new_playlist.email = params[:playlist] != "" ? params[:playlist] : nil
+        new_playlist.location = params[:playlist] != "" ? params[:playlist] : nil
+        new_playlist.genres_string = params[:playlist] != "" ? params[:playlist] : nil
+        new_playlist.description = params[:playlist][:playlistDescription] != "" ? params[:playlist][:playlistDescription] : nil
+        new_playlist.spotify_playlist_page = params[:playlist] != "" ? params[:playlist] : nil
+        new_playlist.twitter = params[:playlist] != "" ? params[:playlist] : nil
+        new_playlist.youtube = params[:playlist] != "" ? params[:playlist] : nil
+        new_playlist.instagram = params[:playlist] != "" ? params[:playlist] : nil
+        new_playlist.reddit = params[:playlist] != "" ? params[:playlist] : nil
+        new_playlist.facebook = params[:playlist] != "" ? params[:playlist] : nil
+        new_playlist.website = params[:playlist] != "" ? params[:playlist] : nil
+        new_playlist.patreon = params[:playlist] != "" ? params[:playlist] : nil
+        new_playlist.save
+
+        render json: new_playlist
+    end 
+
 end 
